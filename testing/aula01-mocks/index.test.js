@@ -18,7 +18,7 @@ const { rejects, deepStrictEqual } = require('assert')
     }
     {
         const filePath = './mocks/threeItems-valid.csv'
-        const result = File.csvToJson(filePath)
+        const result = await File.csvToJson(filePath)
         const expected = [
           {
             "name": "Paulo Romanenghi",
