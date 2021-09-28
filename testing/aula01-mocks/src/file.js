@@ -1,4 +1,4 @@
-const { readFile } = require('fs').promises
+const { readFile } = require('fs/promises')
 const User = require('./user')
 const { error } = require('./constants')
 
@@ -21,7 +21,7 @@ class File {
     }
 
     static async getFileContent(filePath){
-        return (await readFile(filePath)).toString('utf-8')
+        return (await readFile(filePath)).toString('utf8')
     }
 
     static isValid(csvString, options = DEFAULT_OPTION){
