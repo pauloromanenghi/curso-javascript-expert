@@ -1,0 +1,48 @@
+^\d{3}.\d{3}.\d{3}-\d{2}$
+
+123.123.123-14
+321.123.345-20
+200.300.500-19
+
+replace: [.-] por vazio
+
+
+
+
+Romanenghi, Paulo
+Gomes, Laila
+Johnson, Jose
+
+replace: ^(\w+),\s(\w+)$ por
+{firstName: "$2", lastName: "$1"}
+
+
+
+
+O <a href="https://pauloromanenghi.com">Paulo Romanenghi</a> faz palestras e você deveria segui-lo lá no <a href="https://instagram.com/pauloromanenghi">Instagram</a>
+
+A e pode pesquisar no <a href="https://google.com">Google</a> ou <a href="https://yahoo.com">Yahoo</a>
+
+vai que vai!
+
+replace: \[(.*?)\]\(([http|https].*?)\) por 
+<a href="$2">$1</a>
+
+
+
+CONTENT="'use strict';"
+find . -name *.js -not -path '*node_modules**' \
+| ipt -o \
+| xargs -I '{file}' sed -i "" -e '1s/^/\'$CONTENT'\
+/g' {file}
+
+# ls -> primeira linha
+# ^ -> primeira coluna
+# substitui pelo $CONTENT
+# quebrou a linha para adicionar um \n implicito
+
+# muda tudo!
+find . -name *.js -not -path '*node_modules**' \
+| xargs -I '{file}' sed -i "" -e '1s/^/\'$CONTENT'\
+/g' {file}
+
