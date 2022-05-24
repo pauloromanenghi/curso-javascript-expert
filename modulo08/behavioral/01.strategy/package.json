@@ -1,0 +1,21 @@
+{
+  "name": "01.strategy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "knex": "^2.0.0",
+    "mongodb": "^4.6.0",
+    "pg": "^8.7.3"
+  }
+}
